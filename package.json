@@ -1,0 +1,36 @@
+{
+  "name": "missing-files",
+  "version": "1.0.0",
+  "description": "Compare two directories and return files not found in second directory",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gbenvenuti/missing-files.git"
+  },
+  "keywords": [
+    "files",
+    "directory",
+    "dir",
+    "folder",
+    "compare",
+    "missing",
+    "test"
+  ],
+  "author": "gbenvenuti",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gbenvenuti/missing-files/issues"
+  },
+  "homepage": "https://github.com/gbenvenuti/missing-files",
+  "dependencies": {
+    "kgo": "^1.0.0",
+    "mockery": "^1.4.0",
+    "recursive-readdir": "^1.1.2"
+  },
+  "devDependencies": {
+    "grape": "^1.0.0"
+  }
+}
