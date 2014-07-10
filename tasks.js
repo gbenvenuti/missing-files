@@ -1,6 +1,6 @@
 function filterExcludes(excludes, item) {
     for (var key in excludes) {
-        if (item.search(excludes[key]) !== -1) {
+        if (item.match(excludes[key])) {
             return false;
         }
     }
@@ -16,14 +16,13 @@ function masterVsCompare(master, compare, callback) {
 
 function cleaner(directory, excludes) {
     return function(data, callback) {
-        var newData = data.filter(filterExcludes.bind(null, excludes));
-        callback(null, stripDir(directory, newData));
+        var newData = stripDir(directory, data);
+        callback(null, newData.filter(filterExcludes.bind(null, excludes)));
     };
 }
 
 function stripDir(dir, data) {
     var newData = [];
-
     for (var key in data) {
         newData.push(data[key].replace(dir, ''));
     }
