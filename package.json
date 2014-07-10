@@ -1,6 +1,6 @@
 {
   "name": "missing-files",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Compare two directories and return files not found in second directory",
   "main": "index.js",
   "scripts": {
@@ -27,10 +27,10 @@
   "homepage": "https://github.com/gbenvenuti/missing-files",
   "dependencies": {
     "kgo": "^1.0.0",
-    "mockery": "^1.4.0",
     "recursive-readdir": "^1.1.2"
   },
   "devDependencies": {
+    "mockery": "^1.4.0",
     "grape": "^1.0.0"
   }
 }
