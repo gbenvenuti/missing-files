@@ -14,19 +14,19 @@ function masterVsCompare(master, compare, callback) {
     callback(null, master.filter(filterCompare));
 }
 
-function cleaner(directory, excludes) {
-    return function(data, callback) {
-        var newData = stripDir(directory, data);
-        callback(null, newData.filter(filterExcludes.bind(null, excludes)));
-    };
-}
-
-function stripDir(dir, data) {
+function stripDirectory(directory, data) {
     var newData = [];
     for (var key in data) {
-        newData.push(data[key].replace(dir, ''));
+        newData.push(data[key].replace(directory, ''));
     }
     return newData;
+}
+
+function cleaner(directory, excludes) {
+    return function(data, callback) {
+        var newData = stripDirectory(directory, data);
+        callback(null, newData.filter(filterExcludes.bind(null, excludes)));
+    };
 }
 
 module.exports = {
