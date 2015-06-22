@@ -1,17 +1,18 @@
-var test = require('grape'),
-    mockery = require('mockery'),
+var test = require('tape'),
+    Fraudster = require('fraudster'),
+    fraudster = new Fraudster(),
     pathToObjectUnderTest = '../tasks';
 
-mockery.registerAllowables([pathToObjectUnderTest]);
+fraudster.registerAllowables([pathToObjectUnderTest]);
 
 function resetMocks() {
 }
 
 function getCleanTestObject(){
     delete require.cache[require.resolve(pathToObjectUnderTest)];
-    mockery.enable({ useCleanCache: true, warnOnReplace: false });
+    fraudster.enable();
     var objectUnderTest = require(pathToObjectUnderTest);
-    mockery.disable();
+    fraudster.disable();
     resetMocks();
     return objectUnderTest;
 }
